@@ -13,18 +13,25 @@
 #pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "d3dcompiler.lib")
 
+//長いので置き換え
 using Microsoft::WRL::ComPtr;
 
 using ConstantBuffer	= ComPtr<ID3D11Buffer>;
 using VertexBuffer		= ComPtr<ID3D11Buffer>;
 using IndexBuffer		= ComPtr<ID3D11Buffer>;
-using StructuredBuffer	= ComPtr<ID3D11Buffer>;
 using InputLayout		= ComPtr<ID3D11InputLayout>;
 using VertexShader		= ComPtr<ID3D11VertexShader>;
+using HullShader		= ComPtr<ID3D11HullShader>;
+using DomainShader		= ComPtr<ID3D11DomainShader>;
 using GeometryShader	= ComPtr<ID3D11GeometryShader>;
+using Rasterizer		= ComPtr<ID3D11RasterizerState>;
 using PixelShader		= ComPtr<ID3D11PixelShader>;
+using TextureView		= ComPtr<ID3D11ShaderResourceView>;
+using SamplerState		= ComPtr<ID3D11SamplerState>;
+
+//謎の存在
+using StructureBuffer	= ComPtr<ID3D11Buffer>;
 using ComputeShader		= ComPtr<ID3D11ComputeShader>;
-using ShaderTexture		= ComPtr<ID3D11ShaderResourceView>;
 using ComputeOutputView	= ComPtr<ID3D11UnorderedAccessView>;
 
 //Direct3D管理クラス
