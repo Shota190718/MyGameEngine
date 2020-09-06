@@ -1,14 +1,14 @@
 #pragma once
 
 
-#include <windows.h>		//WindowsApplication‚ğg—p‚·‚é‚Ì‚Å•K{
-#include <d3d11.h>			//DirectX11‚ÌAPI‚ª“ü‚Á‚Ä‚¢‚é
-#include <d3dcompiler.h>	//ƒVƒF[ƒ_[‚ÌƒRƒ“ƒpƒCƒ‰
-//#include <DirectXMath.h>	//ƒxƒNƒgƒ‹‚âFLOAT3‚È‚Ç•Ö—˜‚ÈZpƒ‰ƒCƒuƒ‰ƒŠ
-#include <wrl/client.h>		//ƒfƒoƒCƒX‚ÌŠÇ—‚ğ‚µ‚â‚·‚­‚·‚é‚½‚ß‚ÌDirectX”Å‚ÌƒXƒ}[ƒgƒ|ƒCƒ“ƒ^‚Ì‚æ‚¤‚È‚à‚Ì
-#include <memory>			//ƒXƒ}[ƒgƒ|ƒCƒ“ƒ^
+#include <windows.h>		//WindowsApplicationã‚’ä½¿ç”¨ã™ã‚‹ã®ã§å¿…é ˆ
+#include <d3d11.h>			//DirectX11ã®APIãŒå…¥ã£ã¦ã„ã‚‹
+#include <d3dcompiler.h>	//ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©
+//#include <DirectXMath.h>	//ãƒ™ã‚¯ãƒˆãƒ«ã‚„FLOAT3ãªã©ä¾¿åˆ©ãªç®—è¡“ãƒ©ã‚¤ãƒ–ãƒ©ãƒª
+#include <wrl/client.h>		//ãƒ‡ãƒã‚¤ã‚¹ã®ç®¡ç†ã‚’ã—ã‚„ã™ãã™ã‚‹ãŸã‚ã®DirectXç‰ˆã®ã‚¹ãƒãƒ¼ãƒˆãƒã‚¤ãƒ³ã‚¿ã®ã‚ˆã†ãªã‚‚ã®
+#include <memory>			//ã‚¹ãƒãƒ¼ãƒˆãƒã‚¤ãƒ³ã‚¿
 
-//DirectX APIŠÖŒW‚ÌƒŠƒ“ƒN
+//DirectX APIé–¢ä¿‚ã®ãƒªãƒ³ã‚¯
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "d3dcompiler.lib")
@@ -27,7 +27,7 @@ using ComputeShader		= ComPtr<ID3D11ComputeShader>;
 using ShaderTexture		= ComPtr<ID3D11ShaderResourceView>;
 using ComputeOutputView	= ComPtr<ID3D11UnorderedAccessView>;
 
-//Direct3DŠÇ—ƒNƒ‰ƒX
+//Direct3Dç®¡ç†ã‚¯ãƒ©ã‚¹
 class Direct3D11Manager {
 
 private:
@@ -38,13 +38,13 @@ private:
 	UINT winHeight;
 	
 public:
-	ComPtr<ID3D11Device>			pDevice;			//Direct3D–{‘Ì
-	ComPtr<ID3D11DeviceContext>		pImmediateContext;	//DX11‚Ì•`‰æ–½—ß“™‚ğ‘—‚é‚½‚ß‚Ì‚à‚Ì
-	ComPtr<IDXGISwapChain>			pSwapChain;			//ƒn[ƒhƒEƒFƒA‚Ìî•ñ‚ª‹l‚Ü‚Á‚Ä‚¢‚é‚à‚Ì
-	ComPtr<ID3D11RenderTargetView>	pRTView;			//ƒoƒbƒOƒoƒbƒtƒ@‚ğ•`‰ææ‚Æ‚µ‚Äw’è‚Å‚«‚é‚æ‚¤‚É‚µ‚½‚à‚Ì
-	D3D11_VIEWPORT					viewport;			//ƒEƒBƒ“ƒhƒE‚ÌƒTƒCƒY‚Ìw’è
-	ComPtr<ID3D11Texture2D>			pDepthStencil;		//[“xƒXƒeƒ“ƒVƒ‹
-	ComPtr<ID3D11DepthStencilView>	pDepthStencilView;	//[“xƒXƒeƒ“ƒVƒ‹ƒrƒ…[
+	ComPtr<ID3D11Device>			pDevice;			//Direct3Dæœ¬ä½“
+	ComPtr<ID3D11DeviceContext>		pImmediateContext;	//DX11ã®æç”»å‘½ä»¤ç­‰ã‚’é€ã‚‹ãŸã‚ã®ã‚‚ã®
+	ComPtr<IDXGISwapChain>			pSwapChain;			//ãƒãƒ¼ãƒ‰ã‚¦ã‚§ã‚¢ã®æƒ…å ±ãŒè©°ã¾ã£ã¦ã„ã‚‹ã‚‚ã®
+	ComPtr<ID3D11RenderTargetView>	pRTView;			//ãƒãƒƒã‚°ãƒãƒƒãƒ•ã‚¡ã‚’æç”»å…ˆã¨ã—ã¦æŒ‡å®šã§ãã‚‹ã‚ˆã†ã«ã—ãŸã‚‚ã®
+	D3D11_VIEWPORT					viewport;			//ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚µã‚¤ã‚ºã®æŒ‡å®š
+	ComPtr<ID3D11Texture2D>			pDepthStencil;		//æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«
+	ComPtr<ID3D11DepthStencilView>	pDepthStencilView;	//æ·±åº¦ã‚¹ãƒ†ãƒ³ã‚·ãƒ«ãƒ“ãƒ¥ãƒ¼
 
 
 private:
